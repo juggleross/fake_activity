@@ -1,3 +1,5 @@
+require 'fake_activity/type_detector'
+
 module FakeActivity
   class CommitGenerator
     TYPES_REPEAT_COUNT = {

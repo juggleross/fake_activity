@@ -1,9 +1,6 @@
 require 'date'
-require "fake_activity/version"
-
-# move it outside this class letter
-require "fake_activity/type_detector"
-require "fake_activity/commit_generator"
+require 'fake_activity/version'
+require 'fake_activity/commit_generator'
 
 module FakeActivity
   class ActivityGenerator
@@ -19,15 +16,21 @@ module FakeActivity
     end
 
     def generate_activity
-      iterate_by_days
+      generate_commits_by_days
+      send_successfull_message
     end
 
     private
 
-    def iterate_by_days
+    def generate_commits_by_days
       (from..to).each do |date_point|
         FakeActivity::CommitGenerator.generate_commits(date_point)
       end
+    end
+
+    def send_successfull_message
+      puts "Fake activities were successfully generated from #{from} to #{to}"
+      puts "You can push it to github right now: $ 'git push origin master'"
     end
   end
 end
