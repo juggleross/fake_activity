@@ -25,24 +25,8 @@ module FakeActivity
 
     private
 
-    # def add_light_green_activity(date_point)
-    #   1.times { add_commit(date_point) }
-    # end
-    #
-    # def add_moderate_green_activity(date_point)
-    #   6.times { add_commit(date_point) }
-    # end
-    #
-    # def add_green_activity(date_point)
-    #   8.times { add_commit(date_point) }
-    # end
-    #
-    # def add_dark_green_activity(date_point)
-    #   10.times { add_commit(date_point) }
-    # end
-
     def add_commit(number)
-      `git commit -m "#{date} - #{number}" --allow-empty --date=#{date}`
+      `git commit -m "#{date} - #{number + 1}" --allow-empty --date=#{date}`
     end
   end
 end
