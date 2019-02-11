@@ -7,7 +7,7 @@ require "fake_activity/commit_generator"
 
 module FakeActivity
   class ActivityGenerator
-    attr_reader :from, :to, :temp_file_name
+    attr_reader :from, :to
 
     def self.generate_activity(from:, to:)
       new(from: from, to: to).generate_activity
