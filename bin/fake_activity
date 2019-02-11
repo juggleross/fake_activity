@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "fake_activity"
+
+FakeActivity::ActivityGenerator.generate_activity(from: ARGV[0], to: ARGV[1])
