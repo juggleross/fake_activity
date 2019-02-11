@@ -1,6 +1,10 @@
 require 'date'
 require "fake_activity/version"
 
+# move it outside this class letter
+require "fake_activity/type_detector"
+require "fake_activity/commit_generator"
+
 module FakeActivity
   class ActivityGenerator
     attr_reader :from, :to, :temp_file_name
@@ -10,9 +14,8 @@ module FakeActivity
     end
 
     def initialize(from:, to:)
-      @from               = Date.parse(from)
-      @to                 = Date.parse(to)
-      @temp_file_name     = 'temp.txt'
+      @from = Date.parse(from)
+      @to   = Date.parse(to)
     end
 
     def generate_activity
@@ -23,30 +26,8 @@ module FakeActivity
 
     def iterate_by_days
       (from..to).each do |date_point|
-        add_dark_green_activity(date_point.to_s)
+        FakeActivity::CommitGenerator.generate_commits(date_point)
       end
-    end
-
-
-    def add_light_green_activity(date_point)
-      1.times { add_commit(date_point) }
-    end
-
-    def add_moderate_green_activity(date_point)
-      6.times { add_commit(date_point) }
-    end
-
-    def add_green_activity(date_point)
-      8.times { add_commit(date_point) }
-    end
-
-    def add_dark_green_activity(date_point)
-      10.times { add_commit(date_point) }
-    end
-
-
-    def add_commit(date_point)
-      `git commit -m "temp" --allow-empty --date=#{date_point}`
     end
   end
 end
