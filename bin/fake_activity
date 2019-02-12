@@ -2,4 +2,12 @@
 
 require "fake_activity"
 
-FakeActivity::ActivityGenerator.generate_activity(from: ARGV[0], to: ARGV[1])
+arg1 = FakeActivity::DateValidator.new(ARGV[0])
+arg2 = FakeActivity::DateValidator.new(ARGV[1])
+
+if arg1.valid? && arg2.valid?
+  FakeActivity::ActivityGenerator.generate_activity(from: ARGV[0], to: ARGV[1])
+else
+  puts arg1.message
+  puts arg2.message
+end

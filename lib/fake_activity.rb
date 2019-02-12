@@ -1,4 +1,6 @@
 require 'date'
+
+require 'fake_activity/date_validator'
 require 'fake_activity/version'
 require 'fake_activity/commit_generator'
 
