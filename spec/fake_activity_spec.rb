@@ -28,7 +28,7 @@ describe FakeActivity::ActivityGenerator do
         described_class.generate_activity(from: from, to: to)
       end
 
-      it 'calls function 1 time' do
+      it 'calls function 10 time' do
         expect(FakeActivity::CommitGenerator).to have_received(:generate_commits).exactly(10).times
       end
     end
@@ -42,7 +42,7 @@ describe FakeActivity::ActivityGenerator do
         described_class.generate_activity(from: from, to: to)
       end
 
-      it 'calls function 1 time' do
+      it 'does not call function' do
         expect(FakeActivity::CommitGenerator).to have_received(:generate_commits).exactly(0).times
       end
     end

@@ -34,7 +34,6 @@ describe FakeActivity::TypeDetector do
       end
 
       it ':light_green has 50 % probability' do
-        p array_of_types.count(:light_green)
         expect(array_of_types.count(:light_green)).to be_between(4500, 5500)
       end
 

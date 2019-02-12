@@ -9,16 +9,15 @@ module FakeActivity
       dark_green: 10
     }
 
-    attr_reader :date, :number_of_commits, :type
+    attr_reader :date, :type
 
     def self.generate_commits(date)
       new(date).generate_commits
     end
 
     def initialize(date)
-      @type              = FakeActivity::TypeDetector.detect_type
-      @number_of_commits = TYPES_REPEAT_COUNT[@type]
-      @date              = date.to_s
+      @type = FakeActivity::TypeDetector.detect_type
+      @date = date.to_s
     end
 
     def generate_commits
@@ -26,6 +25,10 @@ module FakeActivity
     end
 
     private
+    
+    def number_of_commits
+      @number_of_commits ||= TYPES_REPEAT_COUNT[type]
+    end
 
     def add_commit(number)
       `git commit -m "#{date} - #{number + 1}" --allow-empty --date=#{date}`
