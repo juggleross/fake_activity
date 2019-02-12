@@ -4,33 +4,46 @@ Your github activity isn't enough? No problem, let's change that.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'fake_activity'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install fake_activity
 
 ## Usage
 
-TODO: Write usage instructions here
+To use this gem you just need to write the following:
 
-## Development
+    $ fake_activity "1 Jan 2018" "16 Jul 2018"
+    
+Where `1 Jan 2018` is the start date of the period and `16 Jul 2018` is its end.
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Let me explain the whole usage cycle:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+**1. Сlone any github repo (new or old doesn't matter)**
+        
+    $ git clone https://github.com/juggleross/your_repo.git
+        
+**2. Select the desired time interval. Go to the project and run 'fake_activity' gem ( It would be better to choose an interval of not more than six months, because github can not draw activity for a longer period of time in one attempt )**
+        
+    $ fake_activity "1 Jan 2018" "16 Jul 2018"
+        
+**3. Check your commits and then push the changes to github**
+        
+    $ git push origin master
+        
+**4. You are perfect! If you want to remove this activity later, just delete your repository.**
 
+    
+## How it works?
+
+This gem just generates a bunch of empty commits to the past. But for github, it doesn't matter. It will display this activity anyway.
+
+Commits are generated with the following command:
+
+    $ git commit -m "1 Jan 2018" --allow-empty --date="1 Jan 2018"
+    
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/fake_activity. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/juggleross/fake_activity. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
