@@ -1,6 +1,8 @@
 # FakeActivity
 
-Your github activity isn't enough? No problem, let's change that.
+Your github activity isn't enough? No problem, let's change it without any effort.
+
+![screen shot 2019-02-12 at 5 35 04 pm](https://user-images.githubusercontent.com/12089948/52646192-5f298d00-2ef3-11e9-8860-949c6418bcb1.png)
 
 ## Installation
 
@@ -20,7 +22,7 @@ Let me explain the whole usage cycle:
 
  &nbsp;&nbsp;&nbsp;&nbsp; **1. Сlone any github repo (new or old doesn't matter)**
         
-$ git clone https://github.com/juggleross/your_repo.git
+    $ git clone https://github.com/juggleross/your_repo.git
         
 &nbsp;&nbsp;&nbsp;&nbsp; **2. Select the desired time interval. Go to the project and run 'fake_activity' gem ( It would be better to choose an interval of not more than six months, because github can not draw activity for a longer period of time in one attempt )**
         
