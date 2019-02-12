@@ -9,7 +9,7 @@ describe FakeActivity::DateValidator do
       let(:validator) { described_class.new(date) }
 
       it 'is valid' do
-        expect(validator.valid?).to eq true
+        expect(validator.valid?).to be true
       end
     end
 
@@ -18,7 +18,7 @@ describe FakeActivity::DateValidator do
       let(:validator) { described_class.new(date) }
 
       it 'is invalid' do
-        expect(validator.valid?).to eq false
+        expect(validator.valid?).to be false
       end
     end
 
@@ -27,7 +27,7 @@ describe FakeActivity::DateValidator do
       let(:validator) { described_class.new(date) }
 
       it 'is invalid' do
-        expect(validator.valid?).to eq false
+        expect(validator.valid?).to be_falsey
       end
     end
   end

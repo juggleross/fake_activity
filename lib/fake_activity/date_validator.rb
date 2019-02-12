@@ -19,7 +19,7 @@ module FakeActivity
     private
 
     def date_exist?
-      !date.nil?
+      date
     end
 
     def date_valid?
