@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FakeActivity
   class TypeDetector
     TYPES_PROBABILITY = {
@@ -5,7 +7,7 @@ module FakeActivity
       moderate_green: (51..70),
       green:          (71..90),
       dark_green:     (91..100)
-    }
+    }.freeze
 
     attr_reader :random_number
 
