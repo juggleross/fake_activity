@@ -21,6 +21,15 @@ describe FakeActivity::DateValidator do
         expect(validator.valid?).to eq false
       end
     end
+
+    context 'when date argument is empty' do
+      let(:date) { nil }
+      let(:validator) { described_class.new(date) }
+
+      it 'is invalid' do
+        expect(validator.valid?).to eq false
+      end
+    end
   end
 
   describe '#message' do

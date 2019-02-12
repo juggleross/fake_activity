@@ -9,7 +9,7 @@ module FakeActivity
     end
 
     def valid?
-      @valid ||= check_date
+      date_exist? && date_valid?
     end
 
     def message
@@ -18,7 +18,11 @@ module FakeActivity
 
     private
 
-    def check_date
+    def date_exist?
+      !date.nil?
+    end
+
+    def date_valid?
       Date.parse(date)
       true
     rescue ArgumentError
