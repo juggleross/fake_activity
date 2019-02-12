@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe FakeActivity::DateValidator do
@@ -20,7 +22,6 @@ describe FakeActivity::DateValidator do
       end
     end
   end
-
 
   describe '#message' do
     context 'when date is valid' do

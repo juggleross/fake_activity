@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe FakeActivity::CommitGenerator do
@@ -19,7 +21,7 @@ describe FakeActivity::CommitGenerator do
       end
     end
 
-    context 'when type is :moderate_green' do     
+    context 'when type is :moderate_green' do
       before do
         allow(commit_generator).to receive(:type).and_return :moderate_green
         commit_generator.generate_commits
@@ -30,7 +32,7 @@ describe FakeActivity::CommitGenerator do
       end
     end
 
-    context 'when type is :green' do     
+    context 'when type is :green' do
       before do
         allow(commit_generator).to receive(:type).and_return :green
         commit_generator.generate_commits
@@ -41,7 +43,7 @@ describe FakeActivity::CommitGenerator do
       end
     end
 
-    context 'when type is :dark_green' do     
+    context 'when type is :dark_green' do
       before do
         allow(commit_generator).to receive(:type).and_return :dark_green
         commit_generator.generate_commits

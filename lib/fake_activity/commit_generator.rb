@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fake_activity/type_detector'
 
 module FakeActivity
@@ -7,7 +9,7 @@ module FakeActivity
       moderate_green: 6,
       green: 8,
       dark_green: 10
-    }
+    }.freeze
 
     attr_reader :date, :type
 
@@ -25,7 +27,7 @@ module FakeActivity
     end
 
     private
-    
+
     def number_of_commits
       @number_of_commits ||= TYPES_REPEAT_COUNT[type]
     end

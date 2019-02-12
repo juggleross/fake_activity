@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FakeActivity
   class DateValidator
     attr_reader :date
@@ -17,12 +19,10 @@ module FakeActivity
     private
 
     def check_date
-      begin
-        Date.parse(date)
-        true
-      rescue ArgumentError
-        false
-      end
+      Date.parse(date)
+      true
+    rescue ArgumentError
+      false
     end
   end
 end
